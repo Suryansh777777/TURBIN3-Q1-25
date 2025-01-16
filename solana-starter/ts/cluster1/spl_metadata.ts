@@ -21,7 +21,7 @@ const umi = createUmi("https://api.devnet.solana.com");
 const keypair = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(wallet));
 const signer = createSignerFromKeypair(umi, keypair);
 umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
-//57a9HU79jFDtKsfDLWng6wU68rmQDtAifAjK4GrveMo6RDFk56JvCQ17jXYuHyGaT5gkkDiaB4gD97QV1wtDSBog
+
 (async () => {
   try {
     // Start here

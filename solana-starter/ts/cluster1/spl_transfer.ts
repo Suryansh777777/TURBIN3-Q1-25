@@ -21,6 +21,7 @@ const mint = new PublicKey("61Z9VEZFB8H3xXEC4oXVSCzHQ9TJxsBAPu1mdsX5g2jC");
 // Recipient address
 const to = new PublicKey("GkiKqSVfnU2y4TeUW7up2JS9Z8g1yjGYJ8x2QNf4K6Y");
 
+//Txn https://explorer.solana.com/tx/3yrUynJc953S9BSwCmF3tyHQx58yNwC5jc12M9DtzxNoMqH4dnquwJoovVYQ5HugwQ8TSE2tqW6ZQGEexczxQebx?cluster=devnet
 (async () => {
   try {
     // Get the token account of the fromWallet address, and if it does not exist, create it

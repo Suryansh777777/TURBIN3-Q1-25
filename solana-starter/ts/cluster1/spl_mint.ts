@@ -15,6 +15,7 @@ const mint = new PublicKey("61Z9VEZFB8H3xXEC4oXVSCzHQ9TJxsBAPu1mdsX5g2jC");
 //Your ata is: 64v7oRjmw8m3LL8rPPNjBHN1o5yPeUNDLR1K2oSV1AJ9
 //Your mint txid: 2o9txd7LkSUduX2FmeqCPT51YiQWa7FbyrY7zmEWcZTdUFyds2DLvexkNqJJZSo6DxdztBa4nFbvKdxrsq7DE5z1
 
+//Brocoin tx https://explorer.solana.com/address/61Z9VEZFB8H3xXEC4oXVSCzHQ9TJxsBAPu1mdsX5g2jC?cluster=devnet
 (async () => {
   try {
     // Create an ATA
