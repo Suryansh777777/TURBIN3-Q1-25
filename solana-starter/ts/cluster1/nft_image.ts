@@ -1,30 +1,36 @@
-import wallet from "../wba-wallet.json"
-import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
-import { createGenericFile, createSignerFromKeypair, signerIdentity } from "@metaplex-foundation/umi"
-import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
-import { readFile } from "fs/promises"
+import wallet from "../turbine3-wallet.json";
+import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
+import {
+  createGenericFile,
+  createSignerFromKeypair,
+  signerIdentity,
+} from "@metaplex-foundation/umi";
+import { irysUploader } from "@metaplex-foundation/umi-uploader-irys";
+import { readFile } from "fs/promises";
 
 // Create a devnet connection
-const umi = createUmi('https://api.devnet.solana.com');
+const umi = createUmi("https://api.devnet.solana.com");
 
 let keypair = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(wallet));
 const signer = createSignerFromKeypair(umi, keypair);
 
-umi.use(irysUploader());
+umi.use(irysUploader({ address: "https://devnet.irys.xyz/" }));
 umi.use(signerIdentity(signer));
-
+// https://devnet.irys.xyz/FhMMY84y9rGfGuVfxqAN589gBu94ECiQoo3atoQb3QWs
 (async () => {
-    try {
-        //1. Load image
-        //2. Convert image to generic file.
-        //3. Upload image
-
-        // const image = ???
-
-        // const [myUri] = ??? 
-        // console.log("Your image URI: ", myUri);
-    }
-    catch(error) {
-        console.log("Oops.. Something went wrong", error);
-    }
+  try {
+    //1. Load image
+    //2. Convert image to generic file.
+    //3. Upload image
+    const image = await readFile(
+      "/home/surya/Turbin3/TURBIN3-Q1-25/solana-starter/ts/cluster1/generug.png"
+    );
+    const newFile = createGenericFile(image, "rug.jpg", {
+      contentType: "image/jpg",
+    });
+    const [myUri] = await umi.uploader.upload([newFile]);
+    console.log("Uploaded file to:", myUri);
+  } catch (error) {
+    console.log("Oops.. Something went wrong", error);
+  }
 })();
