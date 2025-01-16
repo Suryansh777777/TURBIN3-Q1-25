@@ -14,7 +14,7 @@ import {
 import { bs58 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
 
 // Define our Mint address
-const mint = publicKey("HxSCPXUy3BAeaTgbWNGg5ewxhg4NaqHLvzCZqRjFPeda");
+const mint = publicKey("61Z9VEZFB8H3xXEC4oXVSCzHQ9TJxsBAPu1mdsX5g2jC");
 
 // Create a UMI connection
 const umi = createUmi("https://api.devnet.solana.com");
@@ -30,9 +30,9 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
       mintAuthority: signer,
     };
     let data: DataV2Args = {
-      name: "dummy",
-      symbol: "dummy",
-      uri: "https://dummy.com",
+      name: "BroCoin",
+      symbol: "BroCoin",
+      uri: "https://BroCoin.com",
       sellerFeeBasisPoints: 0,
       creators: null,
       collection: null,
